@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/telematics/types";
+
+service Aggregator {
+	rpc Aggregate(AggregateRequest) returns (None);
+}
+
+message None {}
+
+message GetInvoiceRequest {
+	int32 ObuID = 1 ;
+}
+
+message AggregateRequest {
+	int32 ObuID = 1;
+	double Value = 2;
+	int64 Unix = 3;
+} 
